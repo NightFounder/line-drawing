@@ -11,8 +11,13 @@ Original file is located at
 #1181203314
 #Line drawing Tutorial
 
-#Digital Differential Analyzer (DDA) Line Drawing Algorithm
+import streamlit as st
+import numpy as np
+import pandas as pd
+import seaborn as sns
 import matplotlib.pyplot as plt
+
+#Digital Differential Analyzer (DDA) Line Drawing Algorithm
 print("Enter the value of x1: ")
 x1 = int(input())
 print("Enter the value of x2: ")
@@ -101,8 +106,14 @@ def midpoint(x1, y1, x2, y2):
         xcoordinates.append(x)
         ycoordinates.append(y)
         print(f"x = {x}, y = {y}")
-    plt.plot(xcoordinates, ycoordinates)
-    plt.show()
+
+        fig = plt.figure(figsize=(10, 4))
+        plt.title("Midpoint Line Algorithm")
+        plt.xlabel("X-Axis")
+        plt.ylabel("Y-Axis")
+        plt.plot(xcoordinates, ycoordinates)
+        plt.show()
+        st.pyplot(fig)
 
 if __name__=="__main__":
     x1 = int(input("Enter the starting point of x: "))
